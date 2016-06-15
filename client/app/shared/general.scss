@@ -1,0 +1,14 @@
+@import "variables";
+
+html, [ui-view], .view-container {
+  height: 100%;
+}
+body {
+  height: 100%;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  outline: none !important;
+}
