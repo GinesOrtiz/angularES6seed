@@ -1,5 +1,5 @@
 import angular from 'angular';
-import {loginDirective} from './login.directive';
+import {loginComponent} from './login.component';
 
 export const login = angular.module('login', [])
     .config(($stateProvider) => {
@@ -10,4 +10,4 @@ export const login = angular.module('login', [])
                 template: '<login></login>'
             });
     })
-    .directive('login', loginDirective);
+    .component('login', loginComponent);

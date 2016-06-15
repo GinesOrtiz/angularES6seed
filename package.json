@@ -62,7 +62,7 @@
     "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
-    "angular": "1.4.8",
+    "angular": "^1.5",
     "angular-sanitize": "^1.5.5",
     "angular-ui-router": "0.2.18",
     "ngstorage": "^0.3.10",

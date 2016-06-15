@@ -1,5 +1,5 @@
 import angular from 'angular';
-import {homeDirective} from './home.directive';
+import {homeComponent} from './home.component';
 
 export const home = angular.module('home', [])
     .config(($stateProvider) => {
@@ -10,4 +10,4 @@ export const home = angular.module('home', [])
                 template: '<home></home>'
             });
     })
-    .directive('home', homeDirective);
+    .component('home', homeComponent);
