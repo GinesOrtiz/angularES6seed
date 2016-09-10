@@ -6,7 +6,7 @@ export const home = angular.module('home', [])
         $stateProvider
             .state('home', {
                 url: '/',
-                auth: true,
+                auth: false,
                 template: '<home></home>'
             });
     })
