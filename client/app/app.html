@@ -1,4 +1,4 @@
-<div id="app" class="view-container">
-    <empty-layout ng-if="!vm.isSecuredView"></empty-layout>
-    <secured-layout ng-if="vm.isSecuredView"></secured-layout>
+<div id="app" class="view-container" ng-switch="vm.layout">
+    <empty-layout ng-switch-when="empty"></empty-layout>
+    <menu-bar-layout ng-switch-when="mainMenu"></menu-bar-layout>
 </div>

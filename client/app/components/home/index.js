@@ -1,13 +1,17 @@
 import angular from 'angular';
 import {homeComponent} from './home.component';
 
+const homeConfig = ($stateProvider) => {
+    $stateProvider
+        .state('billy.home', {
+            url: '/',
+            auth: false,
+            layout: 'mainMenu',
+            template: '<home></home>'
+        });
+};
+homeConfig.$inject = ['$stateProvider'];
+
 export const home = angular.module('home', [])
-    .config(($stateProvider) => {
-        $stateProvider
-            .state('home', {
-                url: '/',
-                auth: false,
-                template: '<home></home>'
-            });
-    })
+    .config(homeConfig)
     .component('home', homeComponent);

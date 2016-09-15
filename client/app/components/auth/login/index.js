@@ -1,13 +1,17 @@
 import angular from 'angular';
 import {loginComponent} from './login.component';
 
+const loginConfig = ($stateProvider) => {
+    $stateProvider
+        .state('billy.login', {
+            url: '/login',
+            auth: false,
+            layout: 'empty',
+            template: '<login></login>'
+        });
+};
+loginConfig.$inject = ['$stateProvider'];
+
 export const login = angular.module('login', [])
-    .config(($stateProvider) => {
-        $stateProvider
-            .state('login', {
-                url: '/login',
-                auth: false,
-                template: '<login></login>'
-            });
-    })
+    .config(loginConfig)
     .component('login', loginComponent);

@@ -1,4 +1,6 @@
-import angular from 'angular';
 import {billy} from './app';
 
-billy.run();
+angular.element(document)
+    .ready(function () {
+        angular.bootstrap(document, [billy.name]);
+    });

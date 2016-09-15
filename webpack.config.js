@@ -67,7 +67,7 @@ var config = {
 
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'jshint-loader!babel', exclude: /node_modules/},
+      {test: /\.js$/, loader: 'jshint-loader!ng-annotate!babel', exclude: /node_modules/},
       {test: /\.(json)$/, loader: 'raw', exclude: /node_modules/},
       {test: /\.html$/, loader: 'raw!html-minifier', exclude: /node_modules/},
       {

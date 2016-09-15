@@ -1,0 +1,23 @@
+#menuBar-layout {
+  ul.menu-bar {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #444;
+    text-align: center;
+    li {
+      display: inline-block;
+      a {
+        padding: 10px 20px;
+        display: block;
+        color: white;
+        font-weight: 300;
+        cursor: pointer;
+        &:hover {
+          background: #616161;
+        }
+      }
+    }
+  }
+}

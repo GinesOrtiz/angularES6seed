@@ -1,11 +1,8 @@
 import template from './empty.html';
 import './empty.scss';
 
-export const emptyLayoutDirective = ()=> {
-    return {
-        template,
-        restrict: 'E',
-        replace: true,
-        scope: {}
-    };
+export const emptyLayoutComponent = {
+    template,
+    restrict: 'E',
+    replace: true
 };
