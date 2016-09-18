@@ -1,8 +1,12 @@
 <div id="menuBar-layout">
-    <ul class="menu-bar">
-        <li ng-repeat="menuItem in ['Home', 'Beers', 'Homebrwing', 'About us']">
-            <a>{{:: menuItem}}</a>
-        </li>
-    </ul>
-    <div ui-view></div>
+    <div class="menu-bar">
+        <ul class="container">
+            <li ng-repeat="item in vm.menu" ng-class="{'right': item.right}">
+                <a ui-sref="{{::item.state}}"
+                        ui-sref-active="active">
+                    {{:: item.label}}</a>
+            </li>
+        </ul>
+    </div>
+    <div ui-view class="container"></div>
 </div>

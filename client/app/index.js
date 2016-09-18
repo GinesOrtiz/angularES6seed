@@ -3,11 +3,15 @@ import uiRouter from 'angular-ui-router';
 import ngstorage from 'ngstorage';
 import ngSanitize from 'angular-sanitize';
 
+import 'minireset.css/minireset.min.css';
 import './shared/general.scss';
 
 import {appComponent} from './app.component';
+
 import {auth} from './components/auth';
 import {home} from './components/home';
+import {about} from './components/about';
+
 import {shared} from './shared';
 import {layouts} from './layouts';
 
@@ -38,6 +42,8 @@ export const billy = angular.module('billy', [
 
     home.name,
     auth.name,
+    about.name,
+
     shared.name,
     layouts.name
 ])

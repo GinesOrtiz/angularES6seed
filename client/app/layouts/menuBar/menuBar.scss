@@ -1,21 +1,45 @@
+@import '../../shared/variables';
+
 #menuBar-layout {
-  ul.menu-bar {
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background: #444;
-    text-align: center;
-    li {
-      display: inline-block;
+  .menu-bar {
+    background: $billyColor;
+    box-shadow: 0 0 10px rgba(black, .1);
+    @include transition(all .2s);
+    ul {
+      list-style-type: none;
+      padding: 0;
+      li {
+        display: inline-block;
+        &.right {
+          float: right;
+          a {
+            margin-left: 15px;
+            margin-right: 0;
+          }
+        }
+      }
       a {
-        padding: 10px 20px;
+        padding: 15px 3px;
         display: block;
         color: white;
         font-weight: 300;
-        cursor: pointer;
-        &:hover {
-          background: #616161;
+        text-decoration: none;
+        position: relative;
+        margin-right: 20px;
+        &:after {
+          content: '';
+          width: 100%;
+          background: white;
+          height: 0;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          @include transition(all .1s);
+        }
+        &:hover, &.active {
+          &:after {
+            height: 4px;
+          }
         }
       }
     }

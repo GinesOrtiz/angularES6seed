@@ -1,5 +1,44 @@
+@import "../../../shared/variables";
+
 #login {
-  p {
-    font-weight: bold;
+  height: 100%;
+  .login-form {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    @include animation('show-form .5s');
+    @include transform(translateY(0));
+  }
+  h1{
+    font-size: 32px;
+    text-align: center;
+    font-weight:100;
+    color: $black;
+  }
+
+  @include keyframes(show-form) {
+    0% {
+      opacity: 0;
+      @include transform(translateY(50px));
+    }
+    100% {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+}
+
+#billy-login {
+  -webkit-transition-delay: .3s;
+  -moz-transition-delay: .3s;
+  -ms-transition-delay: .3s;
+  -o-transition-delay: .3s;
+  transition-delay: .3s;
+  background: $black;
+  .login-ball {
+    &:after {
+      @include transform(scale(2.3));
+      opacity: 1;
+    }
   }
 }

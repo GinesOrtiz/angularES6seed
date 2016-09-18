@@ -1,8 +1,9 @@
 import template from './menuBar.html';
+import {menuController as controller} from './menuBar.controller';
 import './menuBar.scss';
 
 export const menuBarLayoutComponent = {
     template,
-    restrict: 'E',
-    replace: true
+    controller,
+    controllerAs: 'vm'
 };

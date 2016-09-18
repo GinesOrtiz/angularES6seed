@@ -3,11 +3,57 @@
 html, [ui-view], .view-container {
   height: 100%;
 }
+
 body {
-  height: 100%;
-  color: #444;
+  background: $whiteSmoke;
+  color: $black;
   font-family: 'Roboto', sans-serif;
-  margin: 0;
+  display: block;
+  height: 100%;
+  @include transition(all .2s);
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.login-ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  &:after {
+    content: '';
+    width: 1000px;
+    height: 1000px;
+    background: $black;
+    position: fixed;
+    top: calc(50% - 500px);
+    left: calc(50% - 500px);
+    border-radius: 100%;
+    opacity: 0;
+    @include transform(scale(0));
+    @include transition(all .3s);
+  }
+}
+
+.card-box {
+  padding: 20px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(black, .05);
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+.verical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 * {

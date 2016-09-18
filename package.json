@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development node node_modules/.bin/webpack-dev-server --devtool eval --progress --colors --hot --content-base client ",
+    "start": "NODE_ENV=development node node_modules/.bin/webpack-dev-server --port 8080 --devtool eval --progress --colors --hot --content-base client ",
     "build": "rm -rf www && mkdir www && NODE_ENV=production node node_modules/.bin/webpack",
     "test": "karma start"
   },
@@ -67,6 +67,7 @@
     "angular": "^1.5",
     "angular-sanitize": "^1.5.5",
     "angular-ui-router": "^0.3.1",
+    "minireset.css": "0.0.2",
     "ngstorage": "^0.3.10"
   }
 }

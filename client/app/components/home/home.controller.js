@@ -1,10 +1,10 @@
-class HomeController {
+class homeController {
     constructor() {
         this.text = 'Billy Rocks!'
     }
 
 }
 
-HomeController.$inject = [];
+homeController.$inject = [];
 
-export {HomeController};
+export {homeController};
