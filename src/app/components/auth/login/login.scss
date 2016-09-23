@@ -1,4 +1,4 @@
-@import "../../../shared/variables";
+@import "./app/shared/variables";
 
 #login {
   height: 100%;
@@ -24,21 +24,6 @@
     100% {
       opacity: 1;
       @include transform(translateY(0));
-    }
-  }
-}
-
-#billy-login {
-  -webkit-transition-delay: .3s;
-  -moz-transition-delay: .3s;
-  -ms-transition-delay: .3s;
-  -o-transition-delay: .3s;
-  transition-delay: .3s;
-  background: $black;
-  .login-ball {
-    &:after {
-      @include transform(scale(2.3));
-      opacity: 1;
     }
   }
 }

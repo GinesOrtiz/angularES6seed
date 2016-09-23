@@ -3,15 +3,15 @@ class menuController {
         this.menu = [
             {
                 label: 'Home',
-                state: 'billy.home'
+                state: 'app.home'
             },
             {
                 label: 'About [secured path]',
-                state: 'billy.about'
+                state: 'app.about'
             },
             {
                 label: 'Login',
-                state: 'billy.login',
+                state: 'app.login',
                 right: true
             }
         ];

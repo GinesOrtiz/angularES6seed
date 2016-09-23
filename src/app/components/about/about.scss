@@ -1,4 +1,4 @@
-@import '../../shared/variables';
+@import './app/shared/variables';
 
 #about {
   p {
@@ -6,7 +6,7 @@
   }
 }
 
-#billy-about {
+#app-about {
   #menuBar-layout .menu-bar {
     background: $successColor;
   }

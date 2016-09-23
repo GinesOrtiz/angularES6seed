@@ -9,7 +9,7 @@ const appConfig = ($locationProvider, $urlRouterProvider, $stateProvider)=> {
         requireBase: false
     });
     $stateProvider
-        .state('billy', {
+        .state('app', {
             abstract: true,
             component: 'app'
         });

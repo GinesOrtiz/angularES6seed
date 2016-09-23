@@ -16,7 +16,7 @@ import {about} from './components/about';
 import {shared} from './shared';
 import {layouts} from './layouts';
 
-const billy = angular.module('billy', [
+const app = angular.module('app', [
     uiRouter,
     ngSanitize,
     ngstorage.name,
@@ -32,4 +32,4 @@ const billy = angular.module('billy', [
     .config(appConfig)
     .run(appRun);
 
-export {billy};
+export {app};

@@ -10,7 +10,7 @@ class AppController {
             if (toState.auth) {
                 if (!this.AuthService.isAuth()) {
                     event.preventDefault();
-                    this.$state.transitionTo('billy.home');
+                    this.$state.transitionTo('app.home');
                 }
             }
         };

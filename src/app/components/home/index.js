@@ -5,7 +5,7 @@ const homeConfig = ($stateProvider) => {
     'use strict';
 
     $stateProvider
-        .state('billy.home', {
+        .state('app.home', {
             url: '/',
             auth: false,
             layout: 'mainMenu',

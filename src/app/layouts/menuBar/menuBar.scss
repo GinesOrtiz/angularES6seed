@@ -1,8 +1,8 @@
-@import '../../shared/variables';
+@import './app/shared/variables';
 
 #menuBar-layout {
   .menu-bar {
-    background: $billyColor;
+    background: $appColor;
     box-shadow: 0 0 10px rgba(black, .1);
     @include transition(all .2s);
     ul {

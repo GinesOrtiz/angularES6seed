@@ -19,29 +19,6 @@ body {
   margin: 0 auto;
 }
 
-.login-ball {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-  &:after {
-    content: '';
-    width: 1000px;
-    height: 1000px;
-    background: $black;
-    position: fixed;
-    top: calc(50% - 500px);
-    left: calc(50% - 500px);
-    border-radius: 100%;
-    opacity: 0;
-    @include transform(scale(0));
-    @include transition(all .3s);
-  }
-}
-
 .card-box {
   padding: 20px;
   background: white;

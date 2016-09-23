@@ -5,7 +5,7 @@ const aboutConfig = ($stateProvider) => {
     'use strict';
 
     $stateProvider
-        .state('billy.about', {
+        .state('app.about', {
             url: '/about',
             auth: true,
             layout: 'mainMenu',

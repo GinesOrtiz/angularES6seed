@@ -5,7 +5,7 @@ const loginConfig = ($stateProvider) => {
     'use strict';
 
     $stateProvider
-        .state('billy.login', {
+        .state('app.login', {
             url: '/login',
             auth: false,
             layout: 'empty',

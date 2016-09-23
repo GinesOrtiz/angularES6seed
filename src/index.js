@@ -1,9 +1,9 @@
 import angular from 'angular';
-import {billy} from './app';
+import {app} from './app';
 
 angular.element(document)
     .ready(() => {
         'use strict';
 
-        angular.bootstrap(document, [billy.name]);
+        angular.bootstrap(document, [app.name]);
     });
