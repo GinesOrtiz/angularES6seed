@@ -1,8 +1,7 @@
 class homeController {
     constructor() {
-        this.text = 'Billy Rocks!'
+        this.text = 'Billy Rocks!';
     }
-
 }
 
 homeController.$inject = [];

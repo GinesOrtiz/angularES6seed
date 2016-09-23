@@ -6,7 +6,7 @@ class menuController {
                 state: 'billy.home'
             },
             {
-                label: 'About us',
+                label: 'About [secured path]',
                 state: 'billy.about'
             },
             {
@@ -14,7 +14,7 @@ class menuController {
                 state: 'billy.login',
                 right: true
             }
-        ]
+        ];
     }
 }
 

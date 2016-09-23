@@ -7,6 +7,6 @@ export const homeComponent = {
     controller,
     controllerAs: 'vm',
     bindings: {
-        demo: '<'
+        resolveExample: '<'
     }
 };

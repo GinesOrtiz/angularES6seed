@@ -1,0 +1,33 @@
+{
+  "browser": true,
+  "jquery": true,
+  "node": true,
+  "esversion": 6,
+  "camelcase": true,
+  "eqeqeq": true,
+  "indent": 2,
+  "latedef": true,
+  "maxlen": 100,
+  "newcap": true,
+  "quotmark": "single",
+  "strict": true,
+  "undef": true,
+  "unused": true,
+  "eqnull": true,
+  "globals": {
+    "angular": true,
+    "describe": true,
+    "before": true,
+    "after": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "it": true,
+    "expect": true,
+    "inject": true,
+    "process": true,
+    "__API_URL__": true,
+    "__VERSION__": true,
+    "__DEV__": true,
+    "_": true
+  }
+}

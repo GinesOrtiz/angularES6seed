@@ -1,6 +1,8 @@
 import template from './empty.html';
 import './empty.scss';
 
-export const emptyLayoutComponent = {
+const emptyLayoutComponent = {
     template
 };
+
+export {emptyLayoutComponent};

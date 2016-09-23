@@ -1,9 +1,12 @@
-const ApiInterceptor = function ($q, $injector, $localStorage) {
+const AuthInterceptor = function ($q, $injector) {
+    'use strict';
+
     return {
         'request': function (config) {
-            // Add header to request if there's a localStorage user
-            if ($localStorage.user) {
-                config.headers['Authorization'] = $localStorage.user.token;
+            let AuthService = $injector.get('AuthService');
+
+            if (AuthService.isAuth()) {
+                config.headers.Authorization = AuthService.getToken();
             }
 
             config.timeout = 30000;
@@ -15,9 +18,6 @@ const ApiInterceptor = function ($q, $injector, $localStorage) {
         },
 
         'responseError': function (rejection) {
-            var Api = $injector.get('Api');
-            if (__DEV__) console.log('rejection::', rejection);
-
             switch (rejection.status) {
                 case 401:
                     break;
@@ -38,6 +38,6 @@ const ApiInterceptor = function ($q, $injector, $localStorage) {
     };
 };
 
-ApiInterceptor.$inject = ['$q', '$injector', '$localStorage'];
+AuthInterceptor.$inject = ['$q', '$injector'];
 
-export {ApiInterceptor};
+export {AuthInterceptor};

@@ -2,8 +2,10 @@ import template from './menuBar.html';
 import {menuController as controller} from './menuBar.controller';
 import './menuBar.scss';
 
-export const menuBarLayoutComponent = {
+const menuBarLayoutComponent = {
     template,
     controller,
     controllerAs: 'vm'
 };
+
+export {menuBarLayoutComponent};

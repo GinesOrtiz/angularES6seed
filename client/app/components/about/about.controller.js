@@ -1,6 +1,6 @@
 class aboutController {
     constructor() {
-        this.text = 'About section!'
+        this.text = 'About section!';
     }
 
 }

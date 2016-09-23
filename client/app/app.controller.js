@@ -1,30 +1,41 @@
-import {Api} from './shared/api';
-
 class AppController {
-    constructor($scope, Api, $state, $timeout) {
+    constructor($scope, AuthService, $state) {
         this.$scope = $scope;
-        this.Api = Api;
+        this.AuthService = AuthService;
         this.$state = $state;
-        this.$timeout = $timeout;
-        this.layout = this.$state.$current.layout;
 
-        $scope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams)=> {
+        const stateStart = (event, toState) => {
+            'use strict';
 
-        });
+            if (toState.auth) {
+                if (!this.AuthService.isAuth()) {
+                    event.preventDefault();
+                    this.$state.transitionTo('billy.home');
+                }
+            }
+        };
 
-        $scope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams)=> {
-            this.layout = this.$state.$current.layout || 'empty';
-            document.getElementsByTagName("body")[0].setAttribute('id',
-                this.$state.$current.name.replace(/\./g, '-'));
-        });
+        const stateSuccess = (event, toState, toParams, fromState) => {
+            'use strict';
+
+            if (fromState.abstract) {
+                stateStart(event, toState);
+            }
+
+            this.layout = toState.layout || 'empty';
+            document.getElementsByTagName('body')[0]
+                .setAttribute('id', toState.name.replace(/\./g, '-'));
+        };
+
+        $scope.$on('$stateChangeStart', stateStart);
+        $scope.$on('$stateChangeSuccess', stateSuccess);
     }
 }
 
 AppController.$inject = [
     '$scope',
-    'Api',
-    '$state',
-    '$timeout'
+    'AuthService',
+    '$state'
 ];
 
 export {AppController};

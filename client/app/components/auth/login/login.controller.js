@@ -1,6 +1,6 @@
 class LoginController {
     constructor() {
-        this.text = 'Login view'
+        this.text = 'Login view';
     }
 }
 

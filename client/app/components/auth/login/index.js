@@ -2,6 +2,8 @@ import angular from 'angular';
 import {loginComponent} from './login.component';
 
 const loginConfig = ($stateProvider) => {
+    'use strict';
+
     $stateProvider
         .state('billy.login', {
             url: '/login',
@@ -12,6 +14,8 @@ const loginConfig = ($stateProvider) => {
 };
 loginConfig.$inject = ['$stateProvider'];
 
-export const login = angular.module('login', [])
+const login = angular.module('login', [])
     .config(loginConfig)
     .component('login', loginComponent);
+
+export {login};

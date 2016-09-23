@@ -1,5 +1,6 @@
-
 const appConfig = ($locationProvider, $urlRouterProvider, $stateProvider)=> {
+    'use strict';
+
     $urlRouterProvider.otherwise(function () {
         window.location.href = '/login';
     });
@@ -20,6 +21,8 @@ appConfig.$inject = [
 ];
 
 const appRun = ($state)=> {
+    'use strict';
+
     let states = $state.get();
     states.forEach((state)=> {
         if (state.name !== '') {
@@ -28,7 +31,9 @@ const appRun = ($state)=> {
             if (state.resolve) {
                 let resolveKeys = Object.keys(state.resolve);
                 resolveKeys.forEach((rk)=> {
-                    resolves += rk + '=' + rk + ' ';
+                    let attribute = rk.replace(/([A-Z])/g, '-$1')
+                        .toLowerCase();
+                    resolves += attribute + '=' + rk + ' ';
                 });
 
                 state.controller = ($scope) => {

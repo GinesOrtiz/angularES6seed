@@ -1,14 +1,12 @@
 import angular from 'angular';
-import {Api} from './api';
-import {ApiInterceptor} from './apiInterceptor';
 
-const sharedConfig = ($httpProvider) => {
-    $httpProvider.interceptors.push('ApiInterceptor');
+const sharedConfig = () => {
+    'use strict';
+
 };
-sharedConfig.$inject = ['$httpProvider'];
+sharedConfig.$inject = [];
 
-export const shared = angular.module('shared', [])
-    .factory('Api', Api)
-    .factory('ApiInterceptor', ApiInterceptor)
+const shared = angular.module('shared', [])
     .config(sharedConfig);
 
+export {shared};
