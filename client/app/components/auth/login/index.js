@@ -7,7 +7,7 @@ const loginConfig = ($stateProvider) => {
             url: '/login',
             auth: false,
             layout: 'empty',
-            template: '<login></login>'
+            component: 'login'
         });
 };
 loginConfig.$inject = ['$stateProvider'];

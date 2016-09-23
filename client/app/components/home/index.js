@@ -7,7 +7,12 @@ const homeConfig = ($stateProvider) => {
             url: '/',
             auth: false,
             layout: 'mainMenu',
-            template: '<home></home>'
+            component: 'home',
+            resolve: {
+                demo: ()=> {
+                    return 'probandoaa'
+                }
+            }
         });
 };
 homeConfig.$inject = ['$stateProvider'];

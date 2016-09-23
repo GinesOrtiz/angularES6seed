@@ -5,5 +5,8 @@ import './home.scss';
 export const homeComponent = {
     template,
     controller,
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    bindings: {
+        demo: '<'
+    }
 };

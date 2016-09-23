@@ -7,7 +7,7 @@ const aboutConfig = ($stateProvider) => {
             url: '/about',
             auth: false,
             layout: 'mainMenu',
-            template: '<about></about>'
+            component: 'about'
         });
 };
 aboutConfig.$inject = ['$stateProvider'];

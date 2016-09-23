@@ -7,6 +7,7 @@ import 'minireset.css/minireset.min.css';
 import './shared/general.scss';
 
 import {appComponent} from './app.component';
+import {appConfig, appRun} from './app.config';
 
 import {auth} from './components/auth';
 import {home} from './components/home';
@@ -14,26 +15,6 @@ import {about} from './components/about';
 
 import {shared} from './shared';
 import {layouts} from './layouts';
-
-const appConfig = ($locationProvider, $urlRouterProvider, $stateProvider)=> {
-    $urlRouterProvider.otherwise(function () {
-        window.location.href = '/login';
-    });
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
-    $stateProvider
-        .state('billy', {
-            abstract: true,
-            template: '<app></app>'
-        });
-};
-appConfig.$inject = [
-    '$locationProvider',
-    '$urlRouterProvider',
-    '$stateProvider'
-];
 
 export const billy = angular.module('billy', [
     uiRouter,
@@ -48,4 +29,5 @@ export const billy = angular.module('billy', [
     layouts.name
 ])
     .component('app', appComponent)
-    .config(appConfig);
+    .config(appConfig)
+    .run(appRun);

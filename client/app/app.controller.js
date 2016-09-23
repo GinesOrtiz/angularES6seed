@@ -1,41 +1,30 @@
 import {Api} from './shared/api';
 
 class AppController {
-    constructor($scope, Api, $state) {
+    constructor($scope, Api, $state, $timeout) {
         this.$scope = $scope;
         this.Api = Api;
-        //this.layout = 'empty';
+        this.$state = $state;
+        this.$timeout = $timeout;
+        this.layout = this.$state.$current.layout;
 
-        this.$scope.$on('$stateChangeSuccess', (event, toState) => {
-            this.layout = toState.layout || 'empty';
+        $scope.$on('$stateChangeStart', (event, toState, toParams, fromState, fromParams)=> {
+
+        });
+
+        $scope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams)=> {
+            this.layout = this.$state.$current.layout || 'empty';
             document.getElementsByTagName("body")[0].setAttribute('id',
-                toState.name.replace(/\./g, '-'));
+                this.$state.$current.name.replace(/\./g, '-'));
         });
-
-        this.$scope.$on('$stateChangeStart', (event, toState, toParams, fromState) => {
-            if (fromState.abstract) {
-                this.layout = toState.layout || 'empty';
-            }
-            /*
-             if (!this.Api.isAuth() && toState.auth === true) {
-             event.preventDefault();
-             $state.transitionTo('login');
-             }
-             else if (this.Api.isAuth() && toState.auth === false) {
-             event.preventDefault();
-             $state.transitionTo('home');
-             }
-             */
-        });
-
-        //this.$scope.$broadcast('$stateChangeSuccess', $state.current);
     }
 }
 
 AppController.$inject = [
     '$scope',
     'Api',
-    '$state'
+    '$state',
+    '$timeout'
 ];
 
 export {AppController};
