@@ -23,16 +23,21 @@ appConfig.$inject = [
 const appRun = ($state)=> {
     'use strict';
 
+    const convertName = (name) => {
+        return name.replace(/([A-Z])/g, '-$1')
+            .toLowerCase();
+    };
+
     let states = $state.get();
     states.forEach((state)=> {
         if (state.name !== '') {
-            let template = '<' + state.component + ' %%RESOLVES%%></' + state.component + '>';
+            let componentName = convertName(state.component);
+            let template = '<' + componentName + ' %%RESOLVES%%></' + componentName + '>';
             let resolves = '';
             if (state.resolve) {
                 let resolveKeys = Object.keys(state.resolve);
                 resolveKeys.forEach((rk)=> {
-                    let attribute = rk.replace(/([A-Z])/g, '-$1')
-                        .toLowerCase();
+                    let attribute = convertName(rk);
                     resolves += attribute + '=' + rk + ' ';
                 });
 

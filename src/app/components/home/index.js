@@ -9,7 +9,7 @@ const homeConfig = ($stateProvider) => {
             url: '/',
             auth: false,
             layout: 'mainMenu',
-            component: 'home',
+            component: 'homeComponent',
             resolve: {
                 resolveExample: ()=> {
                     return 'resolveExampleContent';
@@ -21,6 +21,6 @@ homeConfig.$inject = ['$stateProvider'];
 
 const home = angular.module('home', [])
     .config(homeConfig)
-    .component('home', homeComponent);
+    .component('homeComponent', homeComponent);
 
 export {home};
