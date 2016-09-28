@@ -100,6 +100,26 @@ Once we have all the bindings ready, we can use the resolves
 });
 ``` 
 
+## Role based states
+By default all states are accessible to all users. However, you can deny the access to certain states based on two simple rules.
+### Allow
+If inside the state object you declare ```allow: ['role1', 'role2']```. If the user has one of the roles defined in the array, he will be able to access to the state.
+### Exclude
+Same idea as ```allow``` but obviously the reverse. ```exclude: ['role3']```. In this case, the state is accessible to anyone **but** the roles inside the array.
+### RedirectTo
+In the case where the user cannot access to an state, by default it will be redireted to 'app.home'. (see /src/app/app.controller.js).
+This behaviour can be overwrite by adding ```redirectTo: 'stateName'``` in the state declaration.
+### Combinations with an example
+```
+.state('app.userProfile', {
+    url: '/',
+    component: 'userProfile',
+    allow: ['user', 'moderator'],
+    exclude: ['anon'],
+    redirectTo: 'app.login'
+});
+``` 
+
 ## Encapsulating views inside a layout
 As you can see in this example, when defining an state, I can also declare a layout. This means that the whole view will be inside a template. This is useful when you have components as widgets in the view like a menu.
 ```
