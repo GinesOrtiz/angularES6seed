@@ -7,7 +7,8 @@ const aboutConfig = ($stateProvider) => {
     $stateProvider
         .state('app.about', {
             url: '/about',
-            auth: true,
+            exclude: ['anon'],
+            redirectTo: 'app.login',
             layout: 'mainMenu',
             component: 'about'
         });

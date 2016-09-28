@@ -7,7 +7,6 @@ const homeConfig = ($stateProvider) => {
     $stateProvider
         .state('app.home', {
             url: '/',
-            auth: false,
             layout: 'mainMenu',
             component: 'homeComponent',
             resolve: {

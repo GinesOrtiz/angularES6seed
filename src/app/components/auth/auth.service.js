@@ -2,7 +2,9 @@ const AuthService = ($http, $q, $localStorage) => {
     'use strict';
     const API_URL = __API_URL__;
 
-    let user = {};
+    let user = {
+        role: 'anon'
+    };
 
     const login = (credentials) => {
         return $http.post(`${API_URL}/auth/login`, credentials)
