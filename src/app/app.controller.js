@@ -5,19 +5,28 @@ class AppController {
         this.$state = $state;
         this.user = AuthService.getUser();
 
+        const redirectByRole = (toState) => {
+            let redirectTo = toState.redirectTo;
+            let defRedirect = 'app.home';
+            let role = this.user.role;
+            let hasRedirect = typeof redirectTo !== 'string';
+
+            return hasRedirect ? (redirectTo[role] || defRedirect) : (redirectTo || defRedirect);
+        };
+
         const stateStart = (event, toState) => {
             'use strict';
 
             if (toState.exclude) {
                 if (toState.exclude.indexOf(this.user.role) > -1) {
                     event.preventDefault();
-                    this.$state.transitionTo(toState.redirectTo || 'app.home');
+                    this.$state.transitionTo(redirectByRole(toState));
                 }
             }
             if (toState.allow) {
                 if (toState.allow.indexOf(this.user.role) < 0) {
                     event.preventDefault();
-                    this.$state.transitionTo(toState.redirectTo || 'app.home');
+                    this.$state.transitionTo(redirectByRole(toState));
                 }
             }
         };

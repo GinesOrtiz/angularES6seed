@@ -7,7 +7,7 @@ const loginConfig = ($stateProvider) => {
     $stateProvider
         .state('app.login', {
             url: '/login',
-            layout: 'empty',
+            layout: 'mainMenu',
             component: 'login'
         });
 };

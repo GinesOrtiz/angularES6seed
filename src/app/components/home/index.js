@@ -1,6 +1,8 @@
 import angular from 'angular';
 import {homeComponent} from './home.component';
 
+import langEN from './lang/en.json';
+
 const homeConfig = ($stateProvider) => {
     'use strict';
 
@@ -16,10 +18,19 @@ const homeConfig = ($stateProvider) => {
             }
         });
 };
+
+const homeRun = (TranslationService) => {
+    'use strict';
+
+    TranslationService.addLang('home', {en: langEN});
+};
+
 homeConfig.$inject = ['$stateProvider'];
+homeRun.$inject = ['TranslationService'];
 
 const home = angular.module('home', [])
+    .component('homeComponent', homeComponent)
     .config(homeConfig)
-    .component('homeComponent', homeComponent);
+    .run(homeRun);
 
 export {home};

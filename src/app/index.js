@@ -3,7 +3,7 @@ import uiRouter from 'angular-ui-router';
 import ngstorage from 'ngstorage';
 import ngSanitize from 'angular-sanitize';
 
-import 'minireset.css/minireset.min.css';
+import 'normalize.css/normalize.css';
 import './shared/general.scss';
 
 import {appComponent} from './app.component';
