@@ -27,12 +27,13 @@ body {
   border-radius: 3px;
 }
 
-.verical-center {
+.vertical-center {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 
-* {
-  outline: none !important;
+.title {
+  margin: 0;
+  text-align: center;
 }
