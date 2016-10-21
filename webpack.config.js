@@ -82,7 +82,7 @@ var config = {
                 loader: 'file-loader?name=/res/[name].[ext]?[hash]'
             },
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=8192'
             },
             {

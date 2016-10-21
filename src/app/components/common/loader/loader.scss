@@ -1,0 +1,49 @@
+@import '../../../shared/variables';
+
+#loader {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  .black-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($black, .4);
+  }
+  .loader-box {
+    position: fixed;
+    z-index: 999;
+    min-height: 60px;
+    top: 50%;
+    margin: -30px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .loader-square {
+    background: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 3px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .loader-text {
+    margin-top: 10px;
+    background: white;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    padding: 5px 7px;
+    border-radius: 2px;
+    color: $black;
+    display: inline-block;
+  }
+}
