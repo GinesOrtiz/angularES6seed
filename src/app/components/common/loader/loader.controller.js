@@ -8,7 +8,6 @@ class loaderController {
     this.$scope.$on('loaderStatus', (event, data)=> {
       this.loaderVisible = data.status;
       this.loaderInfo = data.info;
-      console.log(data);
     });
 
   }

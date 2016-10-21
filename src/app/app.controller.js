@@ -23,7 +23,7 @@ class AppController {
         this.LoaderService.loaderStatus({
           status: true,
           info: {
-            text: 'Loading...'
+            text: 'loader.loading'
           }
         });
       }
@@ -44,12 +44,10 @@ class AppController {
       }
     };
 
-    const stateError = (event, toState) => {
+    const stateError = (event) => {
       event.preventDefault();
 
-      if (toState.onError) {
-        this.$state.transitionTo(toState.onError);
-      }
+      this.LoaderService.loaderStatus({status: false});
 
       this.Notification.error({
         message: 'Error while requesting some resources',

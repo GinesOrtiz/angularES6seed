@@ -5,7 +5,7 @@
       <img ng-src="{{::vm.loaderImage}}">
       {{vm.message}}
     </div>
-    <div ng-if="vm.loaderInfo.text" class="loader-text">{{vm.loaderInfo.text}}</div>
+    <div ng-if="vm.loaderInfo.text" class="loader-text">{{vm.loaderInfo.text | translate}}</div>
   </div>
   <div class="black-layer"></div>
 </div>
