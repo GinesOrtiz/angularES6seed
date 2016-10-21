@@ -8,8 +8,7 @@ const aboutConfig = ($stateProvider) => {
     .state('app.about', {
       url: '/about',
       exclude: [
-        'user',
-        //'anon'
+        'user'
       ],
       redirectTo: {
         'anon': 'app.home',
@@ -21,7 +20,7 @@ const aboutConfig = ($stateProvider) => {
         errorResolve: ($q, $timeout) => {
           let dfd = $q.defer();
           $timeout(()=> {
-            dfd.reject();
+            dfd.resolve();
           }, 1000);
           return dfd.promise;
         }

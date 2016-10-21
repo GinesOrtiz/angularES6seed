@@ -6,7 +6,7 @@ class menuController {
                 state: 'app.home'
             },
             {
-                label: 'About [secured path]',
+                label: 'About',
                 state: 'app.about'
             },
             {

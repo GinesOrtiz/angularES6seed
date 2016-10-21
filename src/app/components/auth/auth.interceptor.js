@@ -1,8 +1,8 @@
-const AuthInterceptor = function ($q, $injector) {
+const AuthInterceptor = ($q, $injector) => {
     'use strict';
 
     return {
-        'request': function (config) {
+        'request':  (config) => {
             let AuthService = $injector.get('AuthService');
 
             if (AuthService.isAuth()) {
@@ -13,11 +13,11 @@ const AuthInterceptor = function ($q, $injector) {
             return config;
         },
 
-        'requestError': function (rejection) {
+        'requestError':  (rejection) => {
             return $q.reject(rejection);
         },
 
-        'responseError': function (rejection) {
+        'responseError':  (rejection) => {
             switch (rejection.status) {
                 case 401:
                     break;
