@@ -17,7 +17,7 @@ const aboutConfig = ($stateProvider) => {
       layout: 'mainMenu',
       component: 'about',
       resolve: {
-        errorResolve: ($q, $timeout) => {
+        successResolve: ($q, $timeout) => {
           let dfd = $q.defer();
           $timeout(()=> {
             dfd.resolve();
