@@ -9,6 +9,8 @@ import './shared/general.scss';
 import {appComponent} from './app.component';
 import {home} from './components/home';
 import {loader} from './components/common/loader';
+import {shared} from './shared';
+
 
 const appConfig = ($urlRouterProvider, $stateProvider) => {
   'use strict';
@@ -33,7 +35,8 @@ const app = angular.module('app', [
   ngstorage.name,
 
   home.name,
-  loader.name
+  loader.name,
+  shared.name
 ])
   .component('app', appComponent)
   .config(appConfig);
