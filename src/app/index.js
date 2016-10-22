@@ -8,7 +8,19 @@ import './shared/general.scss';
 
 import {home} from './components/home';
 
+const appConfig = ($urlRouterProvider) => {
+  'use strict';
+  $urlRouterProvider.otherwise('/');
+};
+
+appConfig.$inject = ['$urlRouterProvider'];
+
 const app = angular.module('app', [
+    uiRouter,
+    ngSanitize,
+    ngstorage.name
+])
+  .config(appConfig);
   uiRouter,
   ngSanitize,
   ngstorage.name,
