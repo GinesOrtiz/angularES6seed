@@ -1,0 +1,11 @@
+<div id="loader"
+  ng-if="vm.loaderVisible">
+  <div class="loader-box">
+    <div class="loader-square">
+      <img ng-src="{{::vm.loaderImage}}">
+      {{vm.message}}
+    </div>
+    <div ng-if="vm.loaderInfo.text" class="loader-text">{{vm.loaderInfo.text}}</div>
+  </div>
+  <div class="black-layer"></div>
+</div>

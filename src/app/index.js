@@ -6,8 +6,9 @@ import ngSanitize from 'angular-sanitize';
 import 'normalize.css/normalize.css';
 import './shared/general.scss';
 
-import {home} from './components/home';
 import {appComponent} from './app.component';
+import {home} from './components/home';
+import {loader} from './components/common/loader';
 
 const appConfig = ($urlRouterProvider, $stateProvider) => {
   'use strict';
@@ -31,7 +32,8 @@ const app = angular.module('app', [
   ngSanitize,
   ngstorage.name,
 
-  home.name
+  home.name,
+  loader.name
 ])
   .component('app', appComponent)
   .config(appConfig);
