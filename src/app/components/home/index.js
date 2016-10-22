@@ -5,7 +5,7 @@ import {HomeService} from './home.service';
 const homeConfig = ($stateProvider) => {
   'use strict';
   $stateProvider
-    .state('home', {
+    .state('app.home', {
       url: '/',
       template: '<home beers="beers"></home>',
       resolve: {
