@@ -8,6 +8,7 @@ import './shared/general.scss';
 
 import {appComponent} from './app.component';
 import {home} from './components/home';
+import {detail} from './components/detail';
 import {loader} from './components/common/loader';
 
 const appConfig = ($urlRouterProvider, $stateProvider) => {
@@ -33,6 +34,7 @@ const app = angular.module('app', [
   ngstorage.name,
 
   home.name,
+  detail.name,
   loader.name
 ])
   .component('app', appComponent)
