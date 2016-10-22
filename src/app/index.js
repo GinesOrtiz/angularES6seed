@@ -16,16 +16,12 @@ const appConfig = ($urlRouterProvider) => {
 appConfig.$inject = ['$urlRouterProvider'];
 
 const app = angular.module('app', [
-    uiRouter,
-    ngSanitize,
-    ngstorage.name
-])
-  .config(appConfig);
   uiRouter,
   ngSanitize,
   ngstorage.name,
 
   home.name
-]);
+])
+  .config(appConfig);
 
 export {app};
