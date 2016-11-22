@@ -1,4 +1,5 @@
-<div ng-repeat="movie in vm.movies">
+<div ng-repeat="movie in vm.movies"
+  ui-sref="detail({id:movie.id})">
   <h1>{{movie.original_title}} </h1>
   <div style="overflow: auto">
     <img width="140"

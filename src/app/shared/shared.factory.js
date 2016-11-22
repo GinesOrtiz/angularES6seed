@@ -40,6 +40,14 @@ const SharedFactory = ($http) => {
       });
   };
 
+  const getSimilarMovies = (id) => {
+    return $http
+      .get(API_URL + '/movie/similar/' + id + '/en/all.js')
+      .then((res)=> {
+        return res.data.results;
+      });
+  };
+
   const getGenres = (genresArray) => {
     let result = [];
     genresArray.forEach((genre)=>{
@@ -51,7 +59,8 @@ const SharedFactory = ($http) => {
 
   return {
     getDiscover,
-    getDetail
+    getDetail,
+    getSimilarMovies
   };
 
 };

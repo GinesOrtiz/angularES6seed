@@ -4,5 +4,9 @@ import template from './detail.html';
 export const detailComponent = {
   template,
   controller,
-  controllerAs: 'vm'
+  controllerAs: 'vm',
+  bindings: {
+    movie: '=',
+    similar: '='
+  }
 };

@@ -1,4 +1,4 @@
-class homeController {
+class movieCardController {
   constructor() {
 
   }
@@ -9,6 +9,6 @@ class homeController {
   }
 }
 
-homeController.$inject = [];
+movieCardController.$inject = [];
 
-export {homeController};
+export {movieCardController};
