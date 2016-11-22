@@ -1,0 +1,12 @@
+<div ng-repeat="movie in vm.movies">
+  <h1>{{movie.original_title}} </h1>
+  <div style="overflow: auto">
+    <img width="140"
+      style="float:left"
+      ng-src="{{::vm.getImage('poster', movie.poster_path)}}">
+    <div>
+      <h3>{{::movie.vote_average}} - {{::movie.release_date | date : 'dd/MM/yyyy'}}</h3>
+      <span>{{movie.overview}}</span>
+    </div>
+  </div>
+</div>
