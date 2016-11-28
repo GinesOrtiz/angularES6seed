@@ -1,10 +1,16 @@
-<h1>{{vm.movie.original_title}} </h1>
-<div style="overflow: auto">
-  <img width="140"
-    style="float:left"
-    ng-src="{{::vm.getImage('poster', vm.movie.poster_path)}}">
-  <div>
-    <h3>{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</h3>
-    <span>{{vm.movie.overview}}</span>
+<div class="col-md-3 col-sm-6 card">
+  <div class="thumbnail"
+    ui-sref="detail({id: vm.movie.id})">
+    <img ng-src="{{::vm.getImage('poster', vm.movie.poster_path)}}">
+    <div class="caption">
+      <h3 class="title"
+        title="{{::vm.movie.original_title}}">{{::vm.movie.original_title}}</h3>
+      <h5>{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</h5>
+      <p class="overview">{{vm.movie.overview}}</p>
+      <hr>
+      <a ui-sref="detail({id: vm.movie.id})"
+        class="btn btn-primary center-block"
+        role="button">Ver más</a>
+    </div>
   </div>
 </div>

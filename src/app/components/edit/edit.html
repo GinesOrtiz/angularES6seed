@@ -1,0 +1,26 @@
+<div class="media thumbnail">
+  <div class="media-body container">
+    <h1>{{::vm.movie.original_title}}</h1>
+    <form>
+      <div class="form-group"
+        ng-repeat="field in ['homepage', 'id', 'imdb_id', 'original_title', 'popularity', 'status']">
+        <label for="{{::field}}">{{::field}}</label>
+        <input class="form-control"
+          ng-model="vm.movie[field]"
+          id="{{::field}}"
+          placeholder="{{::field}}">
+      </div>
+      <div class="form-group">
+        <label for="overview">Overview</label>
+        <textarea id="overview"
+          rows="3"
+          ng-model="vm.movie.overview"
+          class="form-control"></textarea>
+      </div>
+      <button type="submit"
+        class="btn btn-primary">Guardar
+      </button>
+      <hr class="invisible">
+    </form>
+  </div>
+</div>

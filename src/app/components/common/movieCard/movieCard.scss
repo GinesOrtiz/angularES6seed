@@ -1,6 +1,45 @@
 movie-card {
-  width: 25%;
-  background: red;
-  display: inline-block;
-  vertical-align: top;
+  .card {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .thumbnail {
+    box-shadow: 0 2px 10px rgba(black, .1);
+    cursor: pointer;
+    padding: 0;
+  }
+  .overview {
+    $font-size: 14px;
+    $line-height: 1.4;
+    $lines-to-show: 3;
+    display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    height: $font-size*$line-height*$lines-to-show;
+    margin: 0 auto;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .title {
+    $font-size: 26px;
+    $line-height: 1.4;
+    $lines-to-show: 1;
+    font-weight: 100;
+    display: block;
+    display: -webkit-box;
+    max-width: 400px;
+    height: $font-size*$line-height*$lines-to-show;
+    margin: 0 auto;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

@@ -1,6 +1,6 @@
-class detailController {
+class editController {
   constructor() {
-    this.movieLimit = 4;
+
   }
 
   getImage(type, path) {
@@ -9,6 +9,6 @@ class detailController {
   }
 }
 
-detailController.$inject = [];
+editController.$inject = [];
 
-export {detailController};
+export {editController};
