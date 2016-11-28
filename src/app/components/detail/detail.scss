@@ -1,0 +1,32 @@
+detail {
+  .thumbnail {
+    padding: 0;
+  }
+  .media-left {
+    padding-right: 0;
+  }
+  .media-body {
+    padding: 0 30px;
+    position: relative;
+    background: #0c141b;
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .subtitle {
+    margin-top: 0;
+  }
+  .overview {
+    font-size: 20px;
+  }
+  .backdrop {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .4;
+  }
+}

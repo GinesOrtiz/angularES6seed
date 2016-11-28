@@ -3,11 +3,15 @@
     <img class="media-object"
       ng-src="{{::vm.getImage('poster', vm.movie.poster_path)}}">
   </div>
-  <div class="media-body">
-    <h3>{{::vm.movie.original_title}}</h3>
-    <h5>{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</h5>
+  <div class="media-body media-middle">
+    <div class="backdrop"
+      style="background-image: url({{::vm.getImage('backdrop', vm.movie.backdrop_path)}})"></div>
+    <h1>{{::vm.movie.original_title}}</h1>
+    <h3 class="subtitle">{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</h3>
     <p class="overview">{{vm.movie.overview}}</p>
-    <button ui-sref="edit({id: vm.movie.id})" class="btn btn-info">Editar ficha</button>
+    <button ui-sref="edit({id: vm.movie.id})"
+      class="btn btn-info">Editar ficha
+    </button>
   </div>
 </div>
 

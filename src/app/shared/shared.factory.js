@@ -57,10 +57,17 @@ const SharedFactory = ($http) => {
     return result;
   };
 
+  const getImage = (type, path) => {
+    let size = type === 'backdrop' ? 'w1000' : 'w300';
+    return 'https://image.tmdb.org/t/p/' + size + path;
+  };
+
   return {
     getDiscover,
     getDetail,
-    getSimilarMovies
+    getSimilarMovies,
+    getGenres,
+    getImage
   };
 
 };

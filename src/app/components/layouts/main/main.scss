@@ -1,7 +1,5 @@
 body {
-  background: #e9e9e9;
   font-family: 'Marvel' !important;
-  padding-top: 65px;
 }
 
 * {
@@ -15,4 +13,15 @@ body {
     padding: 16px;
     height: 50px;
   }
+}
+
+ui-view{
+  display: block;
+  padding-top: 65px;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }

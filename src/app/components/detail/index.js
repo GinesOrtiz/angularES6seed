@@ -1,6 +1,8 @@
 import angular from 'angular';
 import {detailComponent} from './detail.component';
 
+import './detail.scss';
+
 const detailConfig = ($stateProvider) => {
   'use strict';
 

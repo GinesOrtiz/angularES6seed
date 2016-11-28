@@ -1,14 +1,9 @@
 class homeController {
-  constructor() {
-
-  }
-
-  getImage(type, path) {
-    let size = type === 'backdrop' ? 'w600' : 'w300';
-    return 'https://image.tmdb.org/t/p/' + size + path;
+  constructor(SharedFactory) {
+    this.getImage = SharedFactory.getImage;
   }
 }
 
-homeController.$inject = [];
+homeController.$inject = ['SharedFactory'];
 
 export {homeController};
