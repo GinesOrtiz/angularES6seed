@@ -6,12 +6,17 @@
   <div class="media-body media-middle">
     <div class="backdrop"
       style="background-image: url({{::vm.getImage('backdrop', vm.movie.backdrop_path)}})"></div>
-    <h1>{{::vm.movie.original_title}}</h1>
-    <h3 class="subtitle">{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</h3>
+    <h1>{{::vm.movie.original_title}} </h1>
+    <h3 class="subtitle">
+      <span>{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</span>
+      <!--
+      <span class="label label-warning">Pendiente</span>
+      -->
+    </h3>
     <p class="overview">{{vm.movie.overview}}</p>
-    <button ui-sref="edit({id: vm.movie.id})"
-      class="btn btn-info">Editar ficha
-    </button>
+    <button class="btn btn-info btn-small">Marcar como vista</button>
+    <button class="btn btn-warning btn-small">Marcar como pendiente</button>
+    <button class="btn btn-danger btn-small">Eliminar</button>
   </div>
 </div>
 

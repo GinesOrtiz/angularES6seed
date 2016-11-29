@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import ngStorage from 'ngstorage';
 
 import {home} from './components/home';
 import {detail} from './components/detail';
@@ -22,6 +23,7 @@ appConfig.$inject = ['$locationProvider'];
 
 export const app = angular.module('app', [
   uiRouter,
+  ngStorage.name,
 
   home.name,
   detail.name,
