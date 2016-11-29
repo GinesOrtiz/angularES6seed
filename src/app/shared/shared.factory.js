@@ -48,9 +48,17 @@ const SharedFactory = ($http) => {
       });
   };
 
+  const searchMovies = (query, page = 1) => {
+    return $http
+      .get(API_URL + '/search/movie/' + query + '/en/' + page + '/all.js')
+      .then((res)=> {
+        return res.data;
+      });
+  };
+
   const getGenres = (genresArray) => {
     let result = [];
-    genresArray.forEach((genre)=>{
+    genresArray.forEach((genre)=> {
       result.push(genres[genre]);
     });
 
@@ -66,6 +74,7 @@ const SharedFactory = ($http) => {
     getDiscover,
     getDetail,
     getSimilarMovies,
+    searchMovies,
     getGenres,
     getImage
   };

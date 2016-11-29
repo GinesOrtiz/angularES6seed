@@ -13,6 +13,18 @@ body {
     padding: 16px;
     height: 50px;
   }
+  .pull-right{
+    width: 300px;
+    text-align: right;
+    button{
+      height: 35px;
+    }
+  }
+  .search{
+    margin: 7px 0;
+    height: 35px;
+    width: 70%;
+  }
 }
 
 ui-view{

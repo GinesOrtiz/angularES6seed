@@ -1,6 +1,10 @@
 import template from './main.html';
-import "./main.scss";
+import {mainController as controller} from './main.controller';
+
+import './main.scss';
 
 export const mainLayout = {
-  template
+  template,
+  controller,
+  controllerAs: 'vm'
 };
