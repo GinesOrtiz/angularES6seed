@@ -8,7 +8,7 @@ const detailConfig = ($stateProvider) => {
 
   $stateProvider
     .state('detail', {
-      url: '/detail/:id',
+      url: '/detail',
       template: '<detail movie="$resolve.movie" similar="$resolve.similar"></detail>',
       resolve: {
         movie: (SharedFactory, $stateParams) => {
