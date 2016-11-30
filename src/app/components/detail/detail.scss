@@ -29,4 +29,10 @@ detail {
     bottom: 0;
     opacity: .4;
   }
+  .stars {
+    opacity: 0.2;
+    &.full {
+      opacity: 1;
+    }
+  }
 }

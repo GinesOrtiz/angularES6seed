@@ -8,15 +8,28 @@
       style="background-image: url({{::vm.getImage('backdrop', vm.movie.backdrop_path)}})"></div>
     <h1>{{::vm.movie.original_title}} </h1>
     <h3 class="subtitle">
-      <span>{{::vm.movie.vote_average}} - {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</span>
-      <!--
-      <span class="label label-warning">Pendiente</span>
-      -->
+      <span>{{::vm.movie.vote_average}}
+      <img ng-repeat="i in [0, 1, 2, 3, 4]"
+        class="stars"
+        ng-class="{'full': i < vm.average}"
+        ng-src="{{::vm.star}}">
+      </span>
+      <span>- {{::vm.movie.release_date | date : 'dd/MM/yyyy'}}</span>
+      <span class="label label-{{vm.status}}"
+        ng-if="vm.status">
+        {{ vm.status === 'warning' ? 'Pendiente' : 'Vista' }}
+      </span>
     </h3>
     <p class="overview">{{vm.movie.overview}}</p>
-    <button class="btn btn-info btn-small">Marcar como vista</button>
-    <button class="btn btn-warning btn-small">Marcar como pendiente</button>
-    <button class="btn btn-danger btn-small">Eliminar</button>
+    <button ng-click="vm.markAs(0)"
+      class="btn btn-info btn-small">Marcar como vista
+    </button>
+    <button ng-click="vm.markAs(1)"
+      class="btn btn-warning btn-small">Marcar como pendiente
+    </button>
+    <button ng-click="vm.markAs(2)"
+      class="btn btn-danger btn-small">Eliminar
+    </button>
   </div>
 </div>
 
@@ -28,7 +41,10 @@
     movie="movie"></movie-card>
   <div class="col-md-12">
     <hr class="invisible col-md-12">
-    <button class="btn btn-primary col-md-4 col-md-offset-4">Cargar más</button>
+    <button ng-click="vm.loadMore()"
+      ng-show="vm.canLoadMore"
+      class="btn btn-primary col-md-4 col-md-offset-4">Cargar más
+    </button>
     <hr class="invisible col-md-12">
   </div>
 </div>

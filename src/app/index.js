@@ -6,6 +6,7 @@ import {home} from './components/home';
 import {detail} from './components/detail';
 import {shared} from './shared';
 import {edit} from './components/edit';
+import {search} from './components/search';
 import {common} from './components/common';
 import {layouts} from './components/layouts';
 
@@ -28,6 +29,7 @@ export const app = angular.module('app', [
   home.name,
   detail.name,
   edit.name,
+  search.name,
   shared.name,
   common.name,
   layouts.name

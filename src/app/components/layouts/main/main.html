@@ -7,8 +7,10 @@
       </a>
     </div>
     <div class="pull-right">
-      <form class="form-inline" ng-submit="vm.search()">
-        <input class="search form-control">
+      <form class="form-inline"
+        ng-submit="vm.search()">
+        <input ng-model="vm.query"
+          class="search form-control">
         <button class="btn btn-success">Buscar</button>
       </form>
     </div>
